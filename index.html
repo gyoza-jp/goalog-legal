@@ -3,28 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Goalog プライバシーポリシー</title>
+<title>Goalog プライバシーポリシー / Privacy Policy</title>
 <!--
-  公開用の自己完結 HTML。原文は legal/privacy-policy.md。
-  内容を変更したときは privacy-policy.md とアプリ内の正本 lib/legal/privacy.ts も
-  合わせて更新し、項見出しまで一致させること。
-  見出しは h2 まで（h3 を足すと LegalSection の 1 段構造と食い違う）。
+  公開用の自己完結 HTML。原文（日本語）は legal/privacy-policy.md。
+  英語版はこのファイルにのみ存在する翻訳で、法的な正本ではなく利便のための訳。
+  内容（日本語側）を変更したときは privacy-policy.md とアプリ内の正本 lib/legal/privacy.ts、
+  および ai-pdca-coach リポジトリの legal/privacy-policy.html も合わせて更新すること。
+  英語訳もそのタイミングで追随させる。
 
-  App Store Connect にはこのページの URL を登録する。
-  GitHub Pages で公開する場合、Pages のソースはリポジトリのルートか /docs しか選べないため、
-  このファイルをルートへ複製するか、別のホスティングを使うこと。
+  App Store Connect にはこのページの URL を登録している。URL は変更しない
+  （審査中の提出物のメタデータを触らずに済むよう、同一 URL 内に言語切替を実装した）。
 
-  連絡先は goalog.app@gmail.com（2026-09-06 確定）。変更するときは 4 ファイル
-  （本ファイル・privacy-policy.md・lib/legal/privacy.ts・lib/legal/terms.ts）と
-  App Store Connect の登録を揃えること。
-
-  事業者情報（名称・所在地）は本文に一切記載しない方針（2026-09-06 決定）。
-  動機は問い合わせ負荷の抑制。掲示すると、その経路での問い合わせが発生するため、
-  窓口をメール 1 本に絞る。第 1 項は連絡先のみとし、「求めに応じ回答する」旨も置かない。
-
-  この結果、APPI 32条1項1号と GDPR 13条1項(a) は未充足のまま残る。
-  意図的に受容した判断であり、埋め忘れではない。埋め戻す前に必ず判断メモを読むこと。
-  経緯・地域別の要否・解消方法は technical-docs/legal-compliance-matrix.md の §2 C。
+  連絡先は goalog.app@gmail.com（2026-09-06 確定）。
+  事業者情報（名称・所在地）は本文に一切記載しない方針（2026-09-06 決定、ai-pdca-coach の
+  technical-docs/legal-compliance-matrix.md §2 C を参照）。英語版も同じ方針を踏襲する。
 -->
 <style>
   :root {
@@ -34,6 +26,7 @@
     --ink: #26221E;
     --ink2: #6B635A;
     --accent: #534AB7;
+    --accent-tint: #ECEAF7;
   }
   * { box-sizing: border-box; }
   body {
@@ -47,9 +40,8 @@
   }
   main { max-width: 720px; margin: 0 auto; }
   h1 { font-size: 26px; margin: 0 0 4px; }
-  .updated { color: var(--ink2); font-size: 14px; margin: 0 0 32px; }
+  .updated { color: var(--ink2); font-size: 14px; margin: 0 0 20px; }
   h2 { font-size: 18px; margin: 36px 0 10px; padding-top: 20px; border-top: 1px solid var(--line); }
-  h3 { font-size: 16px; margin: 24px 0 8px; color: var(--ink2); }
   p { margin: 0 0 14px; }
   ul { margin: 0 0 14px; padding-left: 22px; }
   li { margin-bottom: 6px; }
@@ -63,10 +55,33 @@
     margin: 0 0 14px;
   }
   footer { margin-top: 48px; color: var(--ink2); font-size: 14px; }
+
+  /* 言語切替 */
+  .langbar {
+    display: flex; gap: 8px; margin: 0 0 24px;
+  }
+  .langbtn {
+    font: inherit; font-size: 14px; font-weight: 600;
+    padding: 8px 16px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--card);
+    color: var(--ink2); cursor: pointer;
+  }
+  .langbtn[aria-pressed="true"] {
+    background: var(--accent-tint); border-color: var(--accent); color: var(--accent);
+  }
+  .langbtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  [hidden] { display: none !important; }
 </style>
 </head>
 <body>
 <main>
+
+<div class="langbar" role="group" aria-label="Language / 言語">
+  <button type="button" class="langbtn" data-lang="ja" aria-pressed="true">日本語</button>
+  <button type="button" class="langbtn" data-lang="en" aria-pressed="false">English</button>
+</div>
+
+<article id="lang-ja" lang="ja">
 
 <h1>Goalog プライバシーポリシー</h1>
 <p class="updated">最終更新日: 2026年9月5日</p>
@@ -167,6 +182,147 @@
 
 <footer>Goalog</footer>
 
+</article>
+
+<article id="lang-en" lang="en" hidden>
+
+<h1>Goalog Privacy Policy</h1>
+<p class="updated">Last updated: September 5, 2026</p>
+<p class="updated" style="margin-top:-8px;">This English text is a translation provided for convenience. The Japanese version is the original and controlling text.</p>
+
+<p>Goalog (the "App") respects the privacy of its users. This policy explains what information the App handles and for what purpose.</p>
+
+<h2>1. Contact</h2>
+<p>For inquiries about this policy or how data is handled, or to file a complaint, please contact us at <a href="mailto:goalog.app@gmail.com">goalog.app@gmail.com</a>.</p>
+
+<h2>2. Information the App Stores on Your Device</h2>
+<p>All data you enter into the App is stored only on your device.</p>
+<ul>
+  <li>Goals and monthly goals</li>
+  <li>This week's actions and their completion records</li>
+  <li>To-dos, their completion status, and tags</li>
+  <li>Journal entries (your mood for the day and what you wrote)</li>
+  <li>Weekly and monthly reviews</li>
+  <li>The history of goals graduating or evolving</li>
+  <li>Notification settings</li>
+  <li>Identifiers the App generates on your device (see Section 5), your consent status for the Terms of Use, your display language setting, and other internal settings the App needs to operate</li>
+</ul>
+<p>Records from items used in earlier versions of the App may also remain on your device.</p>
+<p>None of this is sent to our servers, and we cannot view it. <strong>The App does not create accounts.</strong> No sign-up or sign-in is required.</p>
+<p>Except for the information described in Sections 5 and 6, we do not send App data to any outside party. That said, data may leave your device through your own actions or through features your device's OS provides; the main cases are described in Sections 3 and 4. These are outside our control, and how they are handled depends on the provider of each feature.</p>
+
+<h2>3. OS-Level Backups</h2>
+<p>If you have enabled a backup feature your device's OS provides (such as iCloud Backup), the OS copies the App's data off your device as part of that feature. How that data is handled follows the privacy policy of the OS provider.</p>
+<p>If you want to exclude the App from backups, you can change this in your device settings.</p>
+
+<h2>4. Files Exported by the Data Transfer Feature</h2>
+<p>A file you export using the "Data Transfer" feature in Settings includes, among the records listed in Section 2: goals, monthly goals, this week's actions and their completion records, to-dos, journal entries, weekly and monthly reviews, the history of goals graduating or evolving, notification settings, and items used for the App's internal management. It does not include your consent status for the Terms of Use or your display language setting.</p>
+<p>Where you store the exported file and who you share it with are under your control, and we are not responsible for how it is handled at the destination.</p>
+<p>The exported file may also remain in the App's temporary storage area after you complete or cancel a share action. This area is on your device and is never sent externally; it is cleared when you delete the App.</p>
+
+<h2>5. Information Sent to Third Parties (RevenueCat)</h2>
+<p>The App uses <a href="https://www.revenuecat.com/privacy">RevenueCat</a> (RevenueCat, Inc.) to manage in-app purchases. Only when you use a feature related to the paid plan (Goalog Pro) is the following information sent to RevenueCat:</p>
+<ul>
+  <li>Purchase history and subscription status</li>
+  <li>An identifier the App generates on your device</li>
+  <li>Technical information such as device type, OS version, and language/currency settings</li>
+  <li>The IP address the request originates from</li>
+</ul>
+<p>This identifier is a random value the App generates on your device. We also use it to manage records on your device, but the content of those records is never itself sent to RevenueCat. We cannot identify you personally from this identifier.</p>
+<p><strong>We never send information that could identify you personally, such as your name, email address, or phone number.</strong> The App also does not collect the advertising identifier (IDFA) or device identifier (IDFV), and does not send either to RevenueCat. That said, due to the nature of network communication, technical information such as your IP address does reach RevenueCat.</p>
+<p>The information above is used to verify purchases, enable paid features, restore purchases, and analyze purchase activity. This analysis is for tallying purchase and cancellation counts and is not performed in a way that identifies individuals.</p>
+<p class="note"><strong>The records described in Section 2 are never sent to RevenueCat.</strong></p>
+<p>RevenueCat is based in the United States, and the information above <strong>is stored on servers in the United States.</strong> The United States has not been designated under Japan's Act on the Protection of Personal Information as a country with a data protection framework equivalent to Japan's. We have confirmed, through our data processing agreement with RevenueCat, that they take appropriate safeguards; that agreement incorporates the EU Standard Contractual Clauses and the UK International Data Transfer Addendum. Information about the data protection framework in that country, and about the measures RevenueCat takes, is available on request through the contact in Section 1.</p>
+<p>In providing its service, RevenueCat uses subprocessors for cloud infrastructure, log management, analytics, and similar functions. The list of subprocessors and their locations is set out in RevenueCat's data processing agreement.</p>
+<p>Information stored with RevenueCat is retained until we stop using their service. How they otherwise handle it follows their own privacy policy.</p>
+
+<h2>6. Information Sent to Third Parties (App Store / Apple)</h2>
+<p>The purchase process itself is handled by Apple. Payment information is handled according to Apple's privacy policy, and we never receive your payment details.</p>
+<p>If you have enabled analytics sharing ("Share With App Developers") in your device's settings, Apple may provide us with aggregated usage and crash data. This data is aggregated and anonymized by Apple and contains no personally identifiable information. You can turn this sharing off at any time from your device settings.</p>
+
+<h2>7. Information We Collect Through Inquiries</h2>
+<p>If you contact us, we receive your email address and the content of your message.</p>
+<p>We use this only to respond to your inquiry and to investigate issues, and we keep it in case a refund needs to be handled or a similar issue comes up again. We do not share it with third parties. If you would like it deleted, please contact us using the procedure in Section 12.</p>
+
+<h2>8. Notifications</h2>
+<p>The App may send notifications at times you set. These are local notifications handled entirely on your device; neither their content nor a record of delivery is sent externally.</p>
+<p>The App does not use push notifications and does not obtain a device token for notifications. You can turn off notifications at any time from the App's settings screen or your device's settings.</p>
+
+<h2>9. What the App Does Not Do</h2>
+<ul>
+  <li>Display advertising or use data for advertising purposes</li>
+  <li>Collect data to track you (we do not perform tracking of the kind covered by App Tracking Transparency)</li>
+  <li>Collect the advertising identifier (IDFA) or device identifier (IDFV)</li>
+  <li>Sell or otherwise provide your data to third parties</li>
+</ul>
+
+<h2>10. Security Measures</h2>
+<p>The App stores the records described in Section 2 only on your device; we do not operate a server to hold them. Data on your device is protected by the safeguards your OS provides.</p>
+<p>For the information described in Section 7, only those of us who need it to do their work handle it.</p>
+<p>For the specific security measures we take, please contact us at the address in Section 1 and we will respond without delay.</p>
+
+<h2>11. Data Retention and Deletion</h2>
+<p>Data on your device is lost once you delete the App; we cannot recover it. If you have enabled the backup described in Section 3, it may be restored from an OS backup.</p>
+<p><strong>Because the App does not create accounts, there is no account-deletion procedure.</strong> To erase all data on your device, delete the App.</p>
+<p>If you're changing phones or need a backup, use the "Data Transfer" feature in Settings.</p>
+
+<h2>12. Requests for Disclosure, Correction, or Deletion</h2>
+<p>For the information described in Section 7, if you would like it disclosed, corrected, its use suspended, or deleted, please contact us at the address in Section 1. We do not charge a fee for this.</p>
+
+<h2>13. For Residents of the European Economic Area (EEA) and the United Kingdom</h2>
+<p>Where the EU General Data Protection Regulation (GDPR) or the UK GDPR applies, we handle your data as follows. The controller is the App's provider, and the contact is as set out in Section 1.</p>
+<p>The legal basis for processing the information in Section 5 is performance of a contract (GDPR Article 6(1)(b)) &mdash; providing the paid plan &mdash; and our legitimate interests (Article 6(1)(f)) in preventing misuse and analyzing purchase activity. As noted in Section 5, this analysis is for aggregate purposes and is not performed in a way that identifies individuals. The legal basis for processing the information in Section 7 is our legitimate interest (Article 6(1)(f)) in responding to inquiries. The records in Section 2 stay on your device, and we do not process them.</p>
+<p>You have the right to access, correct, erase, and restrict the processing of your personal data. Where processing is based on performance of a contract, you also have the right to data portability. Where processing is based on legitimate interests, you also have the right to object. To exercise these rights, please contact us at the address in Section 1. We will respond within one month of receiving your request; where necessary, this may be extended by up to two further months, and we will let you know within the first month if so.</p>
+<p>Transfers to the United States (RevenueCat) are made under the Standard Contractual Clauses and the International Data Transfer Addendum, as described in Section 5.</p>
+<p>We do not carry out automated decision-making, including profiling, that produces legal effects concerning you.</p>
+<p>You also have the right to lodge a complaint with the supervisory authority in your country or region.</p>
+
+<h2>14. For Residents of Other Countries and Regions</h2>
+<p>The laws of your country or region may grant you rights not described in this policy. To exercise such rights, please contact us at the address in Section 1.</p>
+
+<h2>15. Scope of This Policy and Changes</h2>
+<p>This policy applies only to how the App itself handles data. Handling by RevenueCat, Apple, or other third parties is governed by their own privacy policies.</p>
+<p>We may revise this policy as laws change or features are added. If we do, we will update the "Last updated" date above.</p>
+
+<footer>Goalog</footer>
+
+</article>
+
 </main>
+<script>
+(function () {
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.langbtn'));
+  var panels = {
+    ja: document.getElementById('lang-ja'),
+    en: document.getElementById('lang-en'),
+  };
+
+  function show(lang) {
+    Object.keys(panels).forEach(function (k) {
+      panels[k].hidden = (k !== lang);
+    });
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false');
+    });
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('goalog-legal-lang', lang); } catch (e) {}
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { show(b.dataset.lang); });
+  });
+
+  var initial = 'ja';
+  try {
+    var saved = localStorage.getItem('goalog-legal-lang');
+    if (saved === 'ja' || saved === 'en') {
+      initial = saved;
+    } else if ((navigator.language || '').toLowerCase().indexOf('ja') !== 0) {
+      initial = 'en';
+    }
+  } catch (e) {}
+  show(initial);
+})();
+</script>
 </body>
 </html>
